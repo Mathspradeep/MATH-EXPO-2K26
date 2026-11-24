@@ -60,6 +60,12 @@ window.addEventListener("error",function(e){showErr(e.message||"script error")})
 window.addEventListener("unhandledrejection",function(e){showErr((e.reason&&(e.reason.code||e.reason.message))||String(e.reason))});
 if(location.protocol==="file:")window.addEventListener("load",function(){showErr("Opened from your computer. Use your https://...github.io link instead.")});
 </script>
+<script>
+function showErr(m){var b=document.getElementById("errbar");if(!b){b=document.createElement("div");b.id="errbar";b.style.cssText="position:fixed;left:0;right:0;bottom:0;z-index:99;background:#b00020;color:#fff;padding:12px 16px;font:14px/1.4 monospace;white-space:pre-wrap";document.body.appendChild(b);}b.textContent="ERROR: "+m;}
+window.addEventListener("error",function(e){showErr(e.message||"script error")});
+window.addEventListener("unhandledrejection",function(e){showErr((e.reason&&(e.reason.code||e.reason.message))||String(e.reason))});
+if(location.protocol==="file:")showErr("Opened from your computer. Open your https://mathspradeep.github.io/... link instead.");
+</script>
 <nav>
   <span class="logo">∑ MathExpo 2K26</span>
   <a class="l" href="#about">About</a><a class="l" href="#how">How it works</a><a class="l" href="#register">Register</a><a class="l" href="#submit">Submit</a><a class="l" href="#faq">FAQ</a>
@@ -165,7 +171,7 @@ const firebaseConfig = {
   appId: "1:188240500118:web:b2d204253c197e55d879b7"
 };
 /* ===== 2. ORGANIZER EMAILS (must match the emails in firestore.rules) ===== */
-const ADMINS = ["organizer@example.com"];
+const ADMINS = ["pradeepkumar.t@kgkite.ac.in"];
 /* ===== 3. EVENT DATE ===== */
 const EVENT_DATE = new Date("2026-12-10T09:00:00");
 
