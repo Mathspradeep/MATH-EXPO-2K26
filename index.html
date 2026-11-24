@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Expo 2K26</title>
+<meta name="description" content="Math Expo 2K26 – register your team of four and showcase your project.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a1f;--bg2:#14123a;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12);--text:#f2f0ff;--muted:#a7a3cc;--a:#7c5cff;--b:#00d4ff;--c:#ff6bcb;--ok:#4ade80;--err:#ff7b7b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Poppins,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Space Grotesk",Poppins,sans-serif;margin:0}
+a{color:var(--b)}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:18px;padding:12px 24px;background:rgba(11,10,31,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+nav .logo{font:700 20px "Space Grotesk";margin-right:auto;background:linear-gradient(90deg,var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a.l{color:var(--muted);text-decoration:none;font-size:14px}nav a.l:hover{color:#fff}
+.btn{border:0;cursor:pointer;color:#fff;font:600 15px Poppins;padding:11px 22px;border-radius:999px;background:linear-gradient(90deg,var(--a),var(--b));text-decoration:none;display:inline-block;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,92,255,.45)}
+.btn.ghost{background:none;border:1px solid var(--line)}.btn.sm{padding:7px 16px;font-size:13px}.btn:disabled{opacity:.5;cursor:wait}
+.hero{position:relative;text-align:center;padding:90px 20px 80px;overflow:hidden;background:radial-gradient(circle at 20% 10%,#2a1b6e 0,transparent 45%),radial-gradient(circle at 85% 30%,#0a4a6b 0,transparent 40%),var(--bg)}
+.float{position:absolute;font:700 40px "Space Grotesk";color:rgba(255,255,255,.07);animation:fl 9s ease-in-out infinite;user-select:none}
+@keyframes fl{50%{transform:translateY(-24px) rotate(8deg)}}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 16px;font-size:13px;color:var(--muted);margin-bottom:18px}
+.hero h1{font-size:clamp(44px,10vw,96px);line-height:1.02;font-weight:700}
+.grad{background:linear-gradient(90deg,var(--b),var(--a),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{max-width:580px;margin:16px auto;color:var(--muted);font-size:18px}
+.count{display:flex;gap:14px;justify-content:center;margin:34px 0 10px;flex-wrap:wrap}
+.count div{width:92px;padding:16px 6px;border-radius:18px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(6px)}
+.count strong{display:block;font:700 38px "Space Grotesk";font-variant-numeric:tabular-nums}.count span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+section{max-width:960px;margin:0 auto;padding:64px 20px}
+.title{text-align:center;margin-bottom:34px}.title h2{font-size:clamp(28px,5vw,40px)}.title p{color:var(--muted);margin:6px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;backdrop-filter:blur(8px)}
+.card .ic{font-size:30px;margin-bottom:8px}.card h3{font-size:19px;margin-bottom:4px}.card p{margin:0;color:var(--muted);font-size:14px}
+.step{counter-increment:s}.step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--c));font-weight:700;margin-bottom:10px}
+.steps{counter-reset:s}
+label{display:block;font-size:12px;color:var(--muted);margin:12px 0 5px;letter-spacing:.5px}
+input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);font:inherit}
+input:focus{outline:2px solid var(--a);border-color:transparent}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:640px){.row{grid-template-columns:1fr}}
+.mem{margin-top:16px;border-left:3px solid var(--a)}
+.tag{font-size:12px;font-weight:600;padding:3px 12px;border-radius:99px;background:linear-gradient(90deg,var(--a),var(--c))}
+.msg{margin-top:12px;font-weight:600;min-height:1em}.ok{color:var(--ok)}.err{color:var(--err)}
+.gate{text-align:center}.gate p{color:var(--muted)}
+.scroll{overflow-x:auto;margin-top:14px}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:14px 4px}summary{cursor:pointer;font-weight:600}details p{color:var(--muted);margin:8px 0 0}
+dialog{border:1px solid var(--line);border-radius:22px;background:var(--bg2);color:var(--text);width:min(400px,92vw);padding:28px}
+dialog::backdrop{background:rgba(0,0,0,.65);backdrop-filter:blur(3px)}
+.tabs{display:flex;gap:8px;margin-bottom:6px}.tabs button{flex:1;padding:9px;border-radius:10px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer;font:600 14px Poppins}.tabs button.on{background:var(--a);color:#fff;border-color:var(--a)}
+footer{text-align:center;color:var(--muted);padding:36px 20px;border-top:1px solid var(--line);font-size:14px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<nav>
+  <span class="logo">∑ MathExpo 2K26</span>
+  <a class="l" href="#about">About</a><a class="l" href="#how">How it works</a><a class="l" href="#register">Register</a><a class="l" href="#submit">Submit</a><a class="l" href="#faq">FAQ</a>
+  <span id="who" class="l" style="font-size:12px"></span>
+  <button class="btn sm" id="authBtn">Sign in</button>
+</nav>
+
+<header class="hero">
+  <span class="float" style="left:6%;top:18%">π</span><span class="float" style="left:80%;top:12%;animation-delay:-3s">∑</span>
+  <span class="float" style="left:14%;top:68%;animation-delay:-5s">∞</span><span class="float" style="left:88%;top:62%;animation-delay:-2s">√</span>
+  <span class="float" style="left:48%;top:8%;animation-delay:-6s">∫</span>
+  <span class="badge">🎓 Inter-department Mathematics Showcase</span>
+  <h1>Math Expo <span class="grad">2K26</span></h1>
+  <p class="sub">Where numbers come alive. Team up, build something brilliant and show the world the beauty of mathematics.</p>
+  <div class="count"><div><strong id="d">--</strong><span>Days</span></div><div><strong id="h">--</strong><span>Hours</span></div><div><strong id="m">--</strong><span>Mins</span></div><div><strong id="s">--</strong><span>Secs</span></div></div>
+  <p id="when" style="color:var(--muted);font-size:14px;margin:0 0 26px"></p>
+  <a class="btn" href="#register">Register your team →</a>
+  <span id="regCount" style="display:block;margin-top:14px;color:var(--muted);font-size:14px"></span>
+</header>
+
+<section id="about">
+  <div class="title"><h2>What’s in the Expo?</h2><p>Think. Build. Present.</p></div>
+  <div class="grid">
+    <div class="card"><div class="ic">👥</div><h3>Teams of 4</h3><p>One team lead and three members from your college.</p></div>
+    <div class="card"><div class="ic">🧮</div><h3>Any math idea</h3><p>Models, puzzles, apps, visual proofs or research.</p></div>
+    <div class="card"><div class="ic">🔗</div><h3>Share as a link</h3><p>Submit your project through Drive, GitHub, YouTube or any link.</p></div>
+    <div class="card"><div class="ic">🏆</div><h3>Win recognition</h3><p>Present to judges and get rewarded for creativity.</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="title"><h2>How it works</h2></div>
+  <div class="grid steps">
+    <div class="card step"><h3>Sign in</h3><p>Use your email ID to create an account.</p></div>
+    <div class="card step"><h3>Register team</h3><p>Team name plus register and mobile numbers of all four members.</p></div>
+    <div class="card step"><h3>Submit project</h3><p>Paste your project link before the event.</p></div>
+    <div class="card step"><h3>Present</h3><p>Show up on event day and shine.</p></div>
+  </div>
+</section>
+
+<section id="register">
+  <div class="title"><h2>Team Registration</h2><p>Only the team lead needs to register.</p></div>
+  <div class="card gate" id="regGate"><h3>Sign in to register</h3><p>Create a free account with your email ID.</p><button class="btn" onclick="openAuth()">Sign in / Sign up</button></div>
+  <div class="card" id="regCard" hidden>
+    <div class="msg ok" id="regStatus"></div>
+    <label for="team">TEAM NAME</label><input id="team" maxlength="50" autocomplete="off">
+    <div id="members"></div>
+    <p style="margin:20px 0 0"><button class="btn" id="regBtn">Register team</button></p>
+    <div class="msg" id="regMsg" role="status"></div>
+  </div>
+</section>
+
+<section id="submit">
+  <div class="title"><h2>Submit Your Project</h2><p>Paste a shareable link to your project.</p></div>
+  <div class="card gate" id="subGate"><p>Sign in and register your team first.</p></div>
+  <div class="card" id="subCard" hidden>
+    <label for="plink">PROJECT LINK</label><input id="plink" type="url" placeholder="https://drive.google.com/…">
+    <p style="margin:20px 0 0"><button class="btn" id="subBtn">Submit project</button></p>
+    <div class="msg" id="subMsg" role="status"></div>
+  </div>
+</section>
+
+<section id="admin" hidden>
+  <div class="title"><h2>Organizer Panel</h2><p id="stats"></p></div>
+  <div class="card">
+    <button class="btn sm" id="xls">⬇ Excel</button> <button class="btn sm" id="pdf">⬇ PDF</button> <button class="btn sm ghost" id="csv">CSV</button>
+    <div class="msg" id="dlMsg"></div>
+    <div class="scroll"><table id="tbl"></table></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="title"><h2>FAQ</h2></div>
+  <details><summary>How many members per team?</summary><p>Exactly four: one team lead and three members.</p></details>
+  <details><summary>What details do I need?</summary><p>Team name, and the name, register number and mobile number of all four members.</p></details>
+  <details><summary>Can I update my registration or link?</summary><p>Yes. Sign in again and submit the form; your latest entry replaces the old one.</p></details>
+</section>
+
+<footer>© Math Expo 2K26 · Department of Mathematics</footer>
+
+<dialog id="authDlg">
+  <div class="tabs"><button id="tIn" class="on">Sign in</button><button id="tUp">Sign up</button></div>
+  <label for="em">EMAIL ID</label><input id="em" type="email" autocomplete="email">
+  <label for="pw">PASSWORD</label><input id="pw" type="password" autocomplete="current-password" minlength="6">
+  <div class="msg err" id="authMsg"></div>
+  <p style="display:flex;gap:10px;margin:18px 0 0"><button class="btn" id="authGo" style="flex:1">Sign in</button><button class="btn ghost" onclick="authDlg.close()">Cancel</button></p>
+  <p style="text-align:center;margin:12px 0 0"><a href="#" id="forgot" style="font-size:13px">Forgot password?</a></p>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut,sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {getFirestore,doc,getDoc,setDoc,updateDoc,collection,onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* ===== 1. PASTE YOUR FIREBASE CONFIG (Project settings → Your apps → Web) ===== */
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  appId: "YOUR_APP_ID"
+};
+/* ===== 2. ORGANIZER EMAILS (must match the emails in firestore.rules) ===== */
+const ADMINS = ["organizer@example.com"];
+/* ===== 3. EVENT DATE ===== */
+const EVENT_DATE = new Date("2026-12-10T09:00:00");
+
+const $ = id => document.getElementById(id);
+const say = (id,t,ok) => { const e=$(id); e.textContent=t; e.className="msg "+(ok?"ok":"err"); };
+const validUrl = u => /^https?:\/\/[^\s.]+\.[^\s]+$/i.test(u);
+const app = initializeApp(firebaseConfig), auth = getAuth(app), db = getFirestore(app);
+
+// countdown
+(function tick(){
+  const t = EVENT_DATE - new Date(), p = n => String(n).padStart(2,"0");
+  if (t <= 0){ document.querySelector(".count").innerHTML='<h2 class="grad">The Expo is live! 🎉</h2>'; return; }
+  $("d").textContent=p(Math.floor(t/864e5)); $("h").textContent=p(Math.floor(t/36e5)%24);
+  $("m").textContent=p(Math.floor(t/6e4)%60); $("s").textContent=p(Math.floor(t/1e3)%60);
+  setTimeout(tick,1000);
+})();
+$("when").textContent = "Event starts " + EVENT_DATE.toLocaleString([], {dateStyle:"full", timeStyle:"short"});
+
+// member form
+const roles = ["Team Lead","Member 2","Member 3","Member 4"];
+$("members").innerHTML = roles.map((r,i)=>`<div class="card mem"><span class="tag">${r}</span><div class="row">
+<div><label>NAME</label><input id="n${i}" maxlength="60"></div><div><label>REGISTER NUMBER</label><input id="r${i}" maxlength="20"></div>
+<div><label>MOBILE NUMBER</label><input id="p${i}" inputmode="numeric" maxlength="10" placeholder="10 digits"></div></div></div>`).join("");
+
+// auth dialog
+let mode = "in";
+window.openAuth = () => { $("authMsg").textContent=""; $("authDlg").showModal(); };
+const setMode = m => { mode=m; $("tIn").classList.toggle("on",m=="in"); $("tUp").classList.toggle("on",m=="up"); $("authGo").textContent = m=="in"?"Sign in":"Create account"; };
+$("tIn").onclick=()=>setMode("in"); $("tUp").onclick=()=>setMode("up");
+$("authGo").onclick = async () => {
+  const em=$("em").value.trim(), pw=$("pw").value;
+  if (!em || pw.length<6) return say("authMsg","Enter your email and a password (6+ characters).");
+  try { mode=="in" ? await signInWithEmailAndPassword(auth,em,pw) : await createUserWithEmailAndPassword(auth,em,pw); $("authDlg").close(); }
+  catch(e){ say("authMsg", ({"auth/invalid-credential":"Wrong email or password.","auth/email-already-in-use":"Account exists. Please sign in.","auth/invalid-email":"Invalid email.","auth/weak-password":"Password too weak."})[e.code] || e.message); }
+};
+$("forgot").onclick = async e => { e.preventDefault(); const em=$("em").value.trim(); if(!em) return say("authMsg","Type your email first.");
+  try{ await sendPasswordResetEmail(auth,em); say("authMsg","Reset link sent to your email.",true);}catch(x){say("authMsg",x.message);} };
+$("authBtn").onclick = () => auth.currentUser ? signOut(auth) : openAuth();
+
+// state
+let unsubAdmin = null, myReg = null;
+onAuthStateChanged(auth, async u => {
+  $("authBtn").textContent = u ? "Sign out" : "Sign in";
+  $("who").textContent = u ? u.email : "";
+  $("regGate").hidden = !!u; $("regCard").hidden = !u;
+  if (unsubAdmin){ unsubAdmin(); unsubAdmin=null; } $("admin").hidden = true; myReg = null;
+  if (!u){ $("subGate").hidden=false; $("subCard").hidden=true; return; }
+  try {
+    const s = await getDoc(doc(db,"registrations",u.uid));
+    if (s.exists()){ myReg = s.data(); $("team").value = myReg.team; myReg.members.forEach((m,i)=>{ $("n"+i).value=m.name; $("r"+i).value=m.regNo; $("p"+i).value=m.mobile; });
+      $("plink").value = myReg.projectLink||""; $("regStatus").textContent = "✓ Registered as “"+myReg.team+"”. You can edit and resubmit below."; $("regBtn").textContent="Update registration"; }
+    else { $("regStatus").textContent=""; $("regBtn").textContent="Register team"; }
+  } catch(e){ console.error(e); }
+  $("subGate").hidden = !!myReg; $("subCard").hidden = !myReg;
+  if (ADMINS.map(a=>a.toLowerCase()).includes((u.email||"").toLowerCase())) startAdmin();
+});
+
+$("regBtn").onclick = async () => {
+  const u = auth.currentUser; if (!u) return openAuth();
+  const team=$("team").value.trim(); if(!team) return say("regMsg","Please enter a team name.");
+  const members=[];
+  for (let i=0;i<4;i++){
+    const name=$("n"+i).value.trim(), regNo=$("r"+i).value.trim().toUpperCase(), mobile=$("p"+i).value.trim();
+    if(!name||!regNo||!mobile) return say("regMsg",`Fill in all details for ${roles[i]}.`);
+    if(!/^[6-9]\d{9}$/.test(mobile)) return say("regMsg",`${roles[i]}: enter a valid 10-digit mobile number.`);
+    members.push({role:roles[i],name,regNo,mobile});
+  }
+  if(new Set(members.map(m=>m.regNo)).size<4) return say("regMsg","Register numbers must be different.");
+  if(new Set(members.map(m=>m.mobile)).size<4) return say("regMsg","Mobile numbers must be different.");
+  $("regBtn").disabled=true; say("regMsg","Saving…",true);
+  try {
+    await setDoc(doc(db,"registrations",u.uid), {team,members,projectLink:myReg?.projectLink||"",email:u.email,updatedAt:new Date().toISOString()});
+    myReg = {team,members,projectLink:myReg?.projectLink||""};
+    say("regMsg","✓ Team registered successfully!",true); $("regBtn").textContent="Update registration";
+    $("subGate").hidden=true; $("subCard").hidden=false;
+  } catch(e){ say("regMsg","Could not save: "+e.message); }
+  $("regBtn").disabled=false;
+};
+
+$("subBtn").onclick = async () => {
+  const u=auth.currentUser, link=$("plink").value.trim();
+  if(!validUrl(link)) return say("subMsg","Enter a valid link starting with http:// or https://");
+  $("subBtn").disabled=true; say("subMsg","Submitting…",true);
+  try { await updateDoc(doc(db,"registrations",u.uid),{projectLink:link,submittedAt:new Date().toISOString()}); myReg.projectLink=link; say("subMsg","✓ Project link submitted. You can update it anytime.",true); }
+  catch(e){ say("subMsg","Could not submit: "+e.message); }
+  $("subBtn").disabled=false;
+};
+
+// organizer panel
+function startAdmin(){
+  $("admin").hidden=false;
+  const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const head=["S.No","Team","Role","Name","Register No","Mobile","Email","Project Link"]; let regs=[];
+  const flat=()=>regs.flatMap((r,i)=>r.members.map(m=>[i+1,r.team,m.role,m.name,m.regNo,m.mobile,r.email||"",r.projectLink||""]));
+  unsubAdmin = onSnapshot(collection(db,"registrations"), s => {
+    regs = s.docs.map(d=>d.data());
+    $("stats").textContent = regs.length+" team(s) · "+regs.filter(r=>r.projectLink).length+" project(s) submitted";
+    $("regCount").textContent = "";
+    $("tbl").innerHTML = "<tr>"+head.map(h=>"<th>"+h+"</th>").join("")+"</tr>"+flat().map(r=>"<tr>"+r.map((c,i)=>"<td>"+(i==7&&/^https?:\/\//i.test(c)?`<a href="${esc(c)}" target="_blank" rel="noopener">open</a>`:esc(c))+"</td>").join("")+"</tr>").join("");
+  }, e => say("dlMsg","Cannot read registrations: "+e.message));
+  const dl = (name, blob) => { const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000); };
+  const need = () => regs.length ? true : (say("dlMsg","No registrations yet."), false);
+  $("xls").onclick = () => { if(!need()) return; const ws=XLSX.utils.aoa_to_sheet([head,...flat()]); ws["!cols"]=[6,22,12,22,16,14,28,40].map(w=>({wch:w}));
+    const wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,ws,"Registrations"); XLSX.writeFile(wb,"math-expo-2k26-registrations.xlsx"); };
+  $("pdf").onclick = () => { if(!need()) return; const d=new window.jspdf.jsPDF({orientation:"landscape"});
+    d.setFontSize(16); d.text("Math Expo 2K26 - Registered Teams",14,14); d.setFontSize(10); d.text(regs.length+" team(s) | "+new Date().toLocaleString(),14,21);
+    d.autoTable({head:[head],body:flat().map(r=>r.map(String)),startY:26,styles:{fontSize:7},headStyles:{fillColor:[124,92,255]}}); d.save("math-expo-2k26-registrations.pdf"); };
+  $("csv").onclick = () => { if(!need()) return; const q=v=>'"'+String(v).replace(/"/g,'""')+'"';
+    dl("math-expo-2k26-registrations.csv", new Blob([[head,...flat()].map(r=>r.map(q).join(",")).join("\n")],{type:"text/csv"})); };
+}
+</script>
+</body>
+</html>
