@@ -68,7 +68,7 @@ if(location.protocol==="file:")showErr("Opened from your computer. Open your htt
 </script>
 <nav>
   <span class="logo">∑ MathExpo 2K26</span>
-  <a class="l" href="#about">About</a><a class="l" href="#how">How it works</a><a class="l" href="#register">Register</a><a class="l" href="#submit">Submit</a><a class="l" href="#faq">FAQ</a>
+  <a class="l" href="#about">About</a><a class="l" href="#how">How it works</a><a class="l" href="#register">Register</a><a class="l" href="#submit">Submit</a><a class="l" href="#organizers">Organizers</a><a class="l" href="#faq">FAQ</a>
   <span id="who" class="l" style="font-size:12px"></span>
   <button class="btn sm" id="authBtn">Sign in</button>
 </nav>
@@ -137,6 +137,14 @@ if(location.protocol==="file:")showErr("Opened from your computer. Open your htt
   </div>
 </section>
 
+<section id="organizers">
+  <div class="title"><h2>Organizers</h2><p>Contact us for any queries.</p></div>
+  <div class="grid" style="max-width:640px;margin:0 auto">
+    <div class="card" style="text-align:center"><div class="ic">👨‍🏫</div><h3>Dr. K. Senthilkumar</h3><p>Organizer</p><p style="margin-top:10px"><a href="tel:+91XXXXXXXXXX" style="font-weight:600;text-decoration:none">📞 +91 9994661911</a></p></div>
+    <div class="card" style="text-align:center"><div class="ic">👨‍🏫</div><h3>Mr. T. Pradeepkumar</h3><p>Organizer</p><p style="margin-top:10px"><a href="tel:+91XXXXXXXXXX" style="font-weight:600;text-decoration:none">📞 +91 9500563272</a></p></div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="title"><h2>FAQ</h2></div>
   <details><summary>How many members per team?</summary><p>Exactly four: one team lead and three members.</p></details>
@@ -171,7 +179,7 @@ const firebaseConfig = {
   appId: "1:188240500118:web:b2d204253c197e55d879b7"
 };
 /* ===== 2. ORGANIZER EMAILS (must match the emails in firestore.rules) ===== */
-const ADMINS = ["pradeepkumar.t@kgkite.ac.in"];
+const ADMINS = ["pradeepkumar.t@kgkite.ac.in","senthilkumar.k@kgkite.ac.in"];
 /* ===== 3. EVENT DATE ===== */
 const EVENT_DATE = new Date("2026-12-10T09:00:00");
 
