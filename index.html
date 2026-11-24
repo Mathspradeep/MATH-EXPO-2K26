@@ -54,6 +54,12 @@ footer{text-align:center;color:var(--muted);padding:36px 20px;border-top:1px sol
 </style>
 </head>
 <body>
+<script>
+function showErr(m){var b=document.getElementById("errbar");if(!b){b=document.createElement("div");b.id="errbar";b.style.cssText="position:fixed;left:0;right:0;bottom:0;z-index:99;background:#b00020;color:#fff;padding:12px 16px;font:14px/1.4 monospace;white-space:pre-wrap";document.body.appendChild(b);}b.textContent="ERROR: "+m;}
+window.addEventListener("error",function(e){showErr(e.message||"script error")});
+window.addEventListener("unhandledrejection",function(e){showErr((e.reason&&(e.reason.code||e.reason.message))||String(e.reason))});
+if(location.protocol==="file:")window.addEventListener("load",function(){showErr("Opened from your computer. Use your https://...github.io link instead.")});
+</script>
 <nav>
   <span class="logo">∑ MathExpo 2K26</span>
   <a class="l" href="#about">About</a><a class="l" href="#how">How it works</a><a class="l" href="#register">Register</a><a class="l" href="#submit">Submit</a><a class="l" href="#faq">FAQ</a>
@@ -152,36 +158,21 @@ import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmai
 import {getFirestore,doc,getDoc,setDoc,updateDoc,collection,onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 /* ===== 1. PASTE YOUR FIREBASE CONFIG (Project settings → Your apps → Web) ===== */
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA5jgbACt1GZHAKXXyZ9doJjQCzNcY1PWc",
   authDomain: "mathexpo-2k26.firebaseapp.com",
   projectId: "mathexpo-2k26",
-  storageBucket: "mathexpo-2k26.firebasestorage.app",
-  messagingSenderId: "188240500118",
-  appId: "1:188240500118:web:b2d204253c197e55d879b7",
-  measurementId: "G-GY23MBNH5X"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+  appId: "1:188240500118:web:b2d204253c197e55d879b7"
 };
 /* ===== 2. ORGANIZER EMAILS (must match the emails in firestore.rules) ===== */
-const ADMINS = [pradeepkumar.t@kgkite.ac.in];
+const ADMINS = ["organizer@example.com"];
 /* ===== 3. EVENT DATE ===== */
 const EVENT_DATE = new Date("2026-12-10T09:00:00");
 
 const $ = id => document.getElementById(id);
 const say = (id,t,ok) => { const e=$(id); e.textContent=t; e.className="msg "+(ok?"ok":"err"); };
 const validUrl = u => /^https?:\/\/[^\s.]+\.[^\s]+$/i.test(u);
+if(/YOUR_/.test(JSON.stringify(firebaseConfig))) showErr("firebaseConfig still has YOUR_... placeholders. Paste your real values.");
 const app = initializeApp(firebaseConfig), auth = getAuth(app), db = getFirestore(app);
 
 // countdown
