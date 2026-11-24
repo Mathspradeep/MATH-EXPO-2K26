@@ -152,11 +152,27 @@ import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmai
 import {getFirestore,doc,getDoc,setDoc,updateDoc,collection,onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 /* ===== 1. PASTE YOUR FIREBASE CONFIG (Project settings → Your apps → Web) ===== */
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA5jgbACt1GZHAKXXyZ9doJjQCzNcY1PWc",
   authDomain: "mathexpo-2k26.firebaseapp.com",
   projectId: "mathexpo-2k26",
-  appId: "1:188240500118:web:b2d204253c197e55d879b7"
+  storageBucket: "mathexpo-2k26.firebasestorage.app",
+  messagingSenderId: "188240500118",
+  appId: "1:188240500118:web:b2d204253c197e55d879b7",
+  measurementId: "G-GY23MBNH5X"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 };
 /* ===== 2. ORGANIZER EMAILS (must match the emails in firestore.rules) ===== */
 const ADMINS = [pradeepkumar.t@kgkite.ac.in];
